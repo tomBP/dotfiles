@@ -25,6 +25,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
+Plugin 'alvan/vim-closetag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
