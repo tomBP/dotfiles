@@ -7,6 +7,7 @@ set guioptions-=T
 
 set autoread
 set backspace=eol,start,indent
+set shiftwidth=2
 set ruler
 set autoindent
 set nowrap
