@@ -28,6 +28,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,13 @@ let g:ctrlp_working_path_mode = 'rw'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
+
+set tags=./tags;,~/.vimtags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
 
 " ========================================================================
 " Load Configuration 
