@@ -26,6 +26,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 Plugin 'alvan/vim-closetag'
+Plugin 'mattn/emmet-vim'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
