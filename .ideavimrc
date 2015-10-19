@@ -1,0 +1,80 @@
+set hlsearch
+set ignorecase
+set smartcase
+set number
+set clipboard+=unnamed
+
+" LEADER
+let mapleader = ","
+let g:mapleader = ","
+noremap <leader>w :w!<cr>
+noremap <leader>ct :q!<cr>
+noremap <leader>ca :qall!<cr>
+noremap <leader>co :action CloseAllEditorsButActive<CR>
+nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
+
+" MAPS
+noremap H ^
+noremap L $
+noremap 0 ^
+nnoremap G Gzz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap } }zz
+nnoremap { {zz
+noremap j gj
+noremap k gk
+noremap <space> /
+noremap <c-space> ?
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+" Smart way to move between windows
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+noremap <C-a> ggVG
+
+noremap <leader>scr :action NewScratchFile<CR>
+noremap <leader>set :action ShowSettings<CR>
+noremap <leader>anno :action Annotate<CR>
+noremap <leader>re :action RenameElement<CR>
+noremap <leader>rm :action Refactorings.QuickListPopupAction<CR>
+
+noremap <leader>grev :action Git.Revert <CR>
+noremap <leader>om :action OverrideMethods<CR>
+noremap <leader>im :action ImplementMethods<CR>
+noremap <leader>ig :action Generate<CR>
+
+noremap <leader>gcc :action CommentByBlockComment<CR>
+noremap <leader>ilt :action InsertLiveTemplate<CR>
+noremap <leader>islt :action SurroundWithLiveTemplate<CR>
+noremap <leader>f :action Replace<CR>
+
+noremap <leader>ts :action ToggleFullScreen<CR>
+noremap <leader>td :action ToggleDistractionFreeMode<CR>
+
+noremap <leader>jd :action QuickJavaDoc<CR>
+noremap <leader>nc :action NewClass<CR>
+noremap <leader>nf :action NewFile<CR>
+
+
+
+
+"Navigate commands
+"declaration
+"implementation
+"type hiearchy 
+"call hierachy
+"super method
+
+
+
+
+
+
+
