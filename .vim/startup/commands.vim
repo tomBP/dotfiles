@@ -4,7 +4,7 @@ let g:mapleader = ","
 
 " FILE OPERATIONS
 noremap <leader>w :w!<cr>
-noremap <leader>c :q!<cr>
+noremap <leader>cc :q!<cr>
 noremap <leader>ca :qall!<cr>
 command W w !sudo tee % > /dev/null
 noremap <leader>ev :e $MYVIMRC<cr>
@@ -24,6 +24,8 @@ noremap <leader>nt :NERDTreeTabsToggle<CR>
 " TERN
 noremap <leader>tr :TernRefs<CR>
 
+" TAGBAR
+noremap <leader>tb :TagbarToggle<CR>
 
 " MAPS
 noremap H ^

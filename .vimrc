@@ -39,7 +39,7 @@ set laststatus=2
 set t_Co=256
 
 if has("gui_running")
-   colorscheme eclipse
+   colorscheme jellybeans
 else
    colorscheme jellybeans
 endif
@@ -64,7 +64,6 @@ let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
-
 " ========================================================================
 " Load Configuration 
 " ========================================================================
