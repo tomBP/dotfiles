@@ -1,4 +1,4 @@
-" ========================================================================
+" =======================================================================
 " Plugin Configuration
 " ========================================================================
 set nocompatible " Required by vundle
@@ -29,6 +29,9 @@ Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-easytags' 
+Plugin 'Shougo/unite.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,9 +53,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_dotfiles = 0
+let g:ctrlp_dotfiles = 1
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_show_hidden = 1
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 0

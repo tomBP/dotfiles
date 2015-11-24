@@ -8,7 +8,7 @@ set clipboard+=unnamed
 let mapleader = ","
 let g:mapleader = ","
 noremap <leader>w :w!<cr>
-noremap <leader>ct :q!<cr>
+noremap <leader>cc :q!<cr>
 noremap <leader>ca :qall!<cr>
 noremap <leader>co :action CloseAllEditorsButActive<CR>
 nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
@@ -58,12 +58,16 @@ noremap <leader>f :action Replace<CR>
 noremap <leader>ts :action ToggleFullScreen<CR>
 noremap <leader>td :action ToggleDistractionFreeMode<CR>
 
-noremap <leader>jd :action QuickJavaDoc<CR>
+noremap <leader>jd :action FixDocComment<CR>
 noremap <leader>nc :action NewClass<CR>
 noremap <leader>nf :action NewFile<CR>
 
+noremap <leader>d :action ShowIntentionActions<CR>
 
-
+noremap <leader>gi :action GotoImplementation<CR>
+noremap <leader>gd :action GotoDeclaration<CR>
+noremap <leader>gh :action TypeHierarchy<CR>
+noremap <leader>gt :action GotoTest<CR>
 
 "Navigate commands
 "declaration

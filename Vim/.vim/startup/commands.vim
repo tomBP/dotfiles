@@ -18,7 +18,7 @@ nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
 
 " NERDTREE
 autocmd VimEnter * NERDTree
-autocmd BufEnter * lcd %:p:h
+autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 noremap <leader>nt :NERDTreeTabsToggle<CR>
 
 " TERN

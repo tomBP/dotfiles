@@ -19,6 +19,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+nnoremap JK ji
+nnoremap JL ki
 
 " Smart way to move between windows
 noremap <C-j> <C-W>j
@@ -39,9 +41,11 @@ nnoremap gq viw<esc>a"<esc>hbi"<esc>lel
 noremap gF :tabrewind<enter>
 noremap gL :tablast<enter>
 
-noremap gcc :q!<enter>
-noremap gca :qall!<enter>
-noremap gco :only!<enter>
+" noremap gcc :q!<enter>
+" noremap gca :qall!<enter>
+" noremap gco :only!<enter>
+
+noremap got :files<enter>
 
 eclipseaction minview org.eclipse.ui.window.minimizePart
 noremap gmiv :minview<enter>
