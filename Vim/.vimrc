@@ -5,11 +5,11 @@ set nocompatible " Required by vundle
 filetype off     " Required by vundle
 
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle,required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My plugins
 Plugin 'scrooloose/nerdtree.git'
@@ -32,6 +32,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'Shougo/unite.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
+Plugin 'faith/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,6 +62,9 @@ let g:ctrlp_show_hidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 set tags=./tags;,~/.vimtags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']

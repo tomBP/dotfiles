@@ -20,20 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-
-export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
-export JAVA_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export PATH=$PATH:$JAVA_HOME/bin
-export PATH="$PATH:$HOME/npm/bin"
-export PATH="$PATH:$HOME/.node/bin"
-
-if [ -d "/opt/gradle" ]; then
-  export GRADLE_HOME="/opt/gradle"
-  PATH="$PATH:$GRADLE_HOME/bin"
-fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-[[ -s "/home/tombowlby/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tombowlby/.sdkman/bin/sdkman-init.sh"

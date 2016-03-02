@@ -1,19 +1,16 @@
+" ---------- SETTINGS ----------
 set hlsearch
 set ignorecase
 set smartcase
 set number
 set clipboard+=unnamed
+set surround
 
-" LEADER
+" ---------- LEADER CONFIG ----------
 let mapleader = ","
 let g:mapleader = ","
-noremap <leader>w :w!<cr>
-noremap <leader>cc :q!<cr>
-noremap <leader>ca :qall!<cr>
-noremap <leader>co :action CloseAllEditorsButActive<CR>
-nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
 
-" MAPS
+" ---------- GENERAL MAPPINGS ----------
 noremap H ^
 noremap L $
 noremap 0 ^
@@ -30,51 +27,76 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+noremap <C-a> ggVG
 
-" Smart way to move between windows
+" ---------- SPECIAL MAPPINGS ----------
+noremap <leader><leader>v viw"0p
+nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
+
+" ---------- WINDOW MAPPINGS ----------
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
-
-noremap <C-a> ggVG
-
-noremap <leader>scr :action NewScratchFile<CR>
-noremap <leader>set :action ShowSettings<CR>
-noremap <leader>anno :action Annotate<CR>
-noremap <leader>re :action RenameElement<CR>
-noremap <leader>rm :action Refactorings.QuickListPopupAction<CR>
-
-noremap <leader>grev :action Git.Revert <CR>
-noremap <leader>om :action OverrideMethods<CR>
-noremap <leader>im :action ImplementMethods<CR>
-noremap <leader>ig :action Generate<CR>
-
-noremap <leader>gcc :action CommentByBlockComment<CR>
-noremap <leader>ilt :action InsertLiveTemplate<CR>
-noremap <leader>islt :action SurroundWithLiveTemplate<CR>
-noremap <leader>f :action Replace<CR>
-
 noremap <leader>ts :action ToggleFullScreen<CR>
 noremap <leader>td :action ToggleDistractionFreeMode<CR>
+noremap <leader>w :w!<cr>
+noremap <leader>cc :q!<cr>
+noremap <leader>ca :qall!<cr>
+noremap <leader>co :action CloseAllEditorsButActive<CR>
 
-noremap <leader>jd :action FixDocComment<CR>
-noremap <leader>nc :action NewClass<CR>
-noremap <leader>nf :action NewFile<CR>
-
-noremap <leader>d :action ShowIntentionActions<CR>
-
+" ---------- NAVIGATIONAL MAPPINGS ----------
 noremap <leader>gi :action GotoImplementation<CR>
 noremap <leader>gd :action GotoDeclaration<CR>
 noremap <leader>gh :action TypeHierarchy<CR>
-noremap <leader>gt :action GotoTest<CR>
+noremap <leader>gt :action org.moreunit.actions.jump<CR>
+noremap <leader>glt :action org.moreunit.actions.jumpToLastOpenedTest<CR>
+noremap <leader>gs :action GotoSuperMethod<CR>
+noremap <A-j> :action MethodDown<CR>
+noremap <A-k> :action MethodUp<CR>
+noremap <leader><leader>f :action AceJumpAction<CR>
 
-"Navigate commands
-"declaration
-"implementation
-"type hiearchy 
-"call hierachy
-"super method
+" ---------- GIT MAPPINGS ----------
+noremap <leader>grev :action Git.Revert <CR>
+noremap <leader>ganno :action Annotate<CR>
+noremap <leader>gfetch :action Git.Fetch<CR>
+noremap <leader>gpull :action Git.Pull<CR>
+noremap <leader>gstash :action Git.Stash<CR>
+noremap <leader>gpush :action Vcs.Push<CR>
+noremap <leader>gcom :action CheckinProject<CR>
+
+" ---------- CODE GENERATION MAPPINGS ----------
+noremap <leader>om :action OverrideMethods<CR>
+noremap <leader>im :action ImplementMethods<CR>
+noremap <leader>igm :action Generate<CR>
+noremap <leader>iggs :action GenerateGetterAndSetter<CR>
+noremap <leader>igc :action GenerateConstructor<CR>
+noremap <leader>gcc :action CommentByBlockComment<CR>
+noremap <leader>ilt :action InsertLiveTemplate<CR>
+noremap <leader>islt :action SurroundWithLiveTemplate<CR>
+noremap <leader>jd :action FixDocComment<CR>
+
+" ---------- REFACTOR MAPPINGS ----------
+noremap <leader>f :action Replace<CR>
+noremap <leader>re :action RenameElement<CR>
+noremap <leader>rm :action Refactorings.QuickListPopupAction<CR>
+noremap <leader>d<leader>d :action ShowIntentionActions<CR>
+
+" ---------- CREATIONAL MAPPINGS ----------
+noremap <leader>nc :action NewClass<CR>
+noremap <leader>nf :action NewFile<CR>
+noremap <leader>scr :action NewScratchFile<CR>
+
+" ---------- IDE MAPPINGS ----------
+noremap <leader>set :action ShowSettings<CR>
+noremap <leader>nc :action NewClass<CR>
+noremap <leader>nf :action NewFile<CR>
+noremap <leader>scr :action NewScratchFile<CR>
+noremap <leader>be :action EditBreakpoint<CR>
+noremap <leader>bt :action ToggleLineBreakpoint<CR>
+noremap <leader>em :action ChooseRunConfiguration<CR>
+noremap <leader>et :action RunClass<CR>
+noremap <leader>er :action Rerun<CR>
 
 
 
