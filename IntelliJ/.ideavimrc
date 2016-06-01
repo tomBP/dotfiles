@@ -13,7 +13,6 @@ let g:mapleader = ","
 " ---------- GENERAL MAPPINGS ----------
 noremap H ^
 noremap L $
-noremap 0 ^
 nnoremap G Gzz
 nnoremap n nzz
 nnoremap N Nzz
@@ -26,8 +25,10 @@ noremap <c-space> ?
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
+
 vnoremap : ;
 noremap <C-a> ggVG
+vnoremap // y/<C-R>"<CR>jjjlk;j
 
 " ---------- SPECIAL MAPPINGS ----------
 noremap <leader><leader>v viw"0p
@@ -38,6 +39,8 @@ noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
+nnoremap <a-h> gT
+nnoremap <a-l> gt
 noremap <leader>ts :action ToggleFullScreen<CR>
 noremap <leader>td :action ToggleDistractionFreeMode<CR>
 noremap <leader>w :w!<cr>
@@ -54,7 +57,9 @@ noremap <leader>glt :action org.moreunit.actions.jumpToLastOpenedTest<CR>
 noremap <leader>gs :action GotoSuperMethod<CR>
 noremap <A-j> :action MethodDown<CR>
 noremap <A-k> :action MethodUp<CR>
-noremap <leader><leader>f :action AceJumpAction<CR>
+nnoremap <leader><leader>f :action AceJumpAction<CR>
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
 
 " ---------- GIT MAPPINGS ----------
 noremap <leader>grev :action Git.Revert <CR>
@@ -74,6 +79,7 @@ noremap <leader>igc :action GenerateConstructor<CR>
 noremap <leader>gcc :action CommentByBlockComment<CR>
 noremap <leader>ilt :action InsertLiveTemplate<CR>
 noremap <leader>islt :action SurroundWithLiveTemplate<CR>
+noremap <leader>isur :action SurroundWith<CR>
 noremap <leader>jd :action FixDocComment<CR>
 
 " ---------- REFACTOR MAPPINGS ----------
@@ -95,8 +101,11 @@ noremap <leader>scr :action NewScratchFile<CR>
 noremap <leader>be :action EditBreakpoint<CR>
 noremap <leader>bt :action ToggleLineBreakpoint<CR>
 noremap <leader>em :action ChooseRunConfiguration<CR>
-noremap <leader>et :action RunClass<CR>
-noremap <leader>er :action Rerun<CR>
+noremap <leader>ec :action RunClass<CR>
+noremap <leader>er :action Run<CR>
+noremap <leader>ere :action Rerun<CR>
+noremap <leader>edc :action DebugClass<CR>
+noremap <leader>edr :action Debug<CR>
 
 
 

@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# Commands
+function mkdircd () { 
+  mkdir -p "$@" && eval cd "\"\$$#\""; 
+}

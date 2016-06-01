@@ -2,4 +2,8 @@
 	name = tbp
 	email = 
 [alias]
-        l = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
+  l = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
+  svncmtest = svn dcommit --dry-run
+  svncm   = svn dcommit
+
+

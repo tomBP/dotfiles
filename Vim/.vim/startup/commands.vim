@@ -17,8 +17,8 @@ noremap <leader>evs :e ~/.vim/startup/settings.vim<cr>
 nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
 
 " NERDTREE
-autocmd VimEnter * NERDTree
-autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
+" autocmd VimEnter * NERDTree
+" autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 noremap <leader>nt :NERDTreeTabsToggle<CR>
 
 " TERN
@@ -30,7 +30,6 @@ noremap <leader>tb :TagbarToggle<CR>
 " MAPS
 noremap H ^
 noremap L $
-noremap 0 ^
 nnoremap G Gzz
 nnoremap n nzz
 nnoremap N Nzz
@@ -45,13 +44,14 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 noremap <C-a> ggVG
+vnoremap // y/<C-R>"<CR>
 
 " SESSIONS
 noremap <leader>os :OpenSession<cr>
 
 " BUFFERS AND TABS
-noremap gb :bp<cr>
-noremap gB :bn<cr>
+noremap gB :bp<cr>
+noremap gb :bn<cr>
 noremap <leader>bd :bdelete<cr>
 
 " WINDOWS

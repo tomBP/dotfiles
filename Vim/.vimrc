@@ -1,4 +1,4 @@
-" =======================================================================
+" ========================================================================
 " Plugin Configuration
 " ========================================================================
 set nocompatible " Required by vundle
@@ -19,7 +19,6 @@ Plugin 'easymotion/vim-easymotion.git'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
-Plugin 'initrc/eclim-vundle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
@@ -43,12 +42,10 @@ set laststatus=2
 set t_Co=256
 
 if has("gui_running")
-   colorscheme jellybeans
+   colorscheme eclipse
 else
    colorscheme jellybeans
 endif
-
-let g:EclimCompletionMethod = 'omnifunc'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
