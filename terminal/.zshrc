@@ -25,9 +25,10 @@ export GROOVY_HOME="$OPT/groovy-2.4.6"
 export GOPATH="$HOME/Work/Go"
 export PATH="$PATH:$MAVEN_HOME/bin:$GRADLE_HOME/bin:$USR/local/go/bin:$GRAILS_HOME/bin:$ANT_HOME/bin:$GROOVY_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
+# Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# Set editor and command line behaviour to vim 
+# Terminal tweaks
 export EDITOR='vim'
 bindkey -v
 bindkey "^R" history-incremental-search-backward

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # INSTALL UTILITY FUNCTIONS
 # Tom Bowlby Pearson 2016
@@ -53,6 +53,23 @@ printLine(){
 }
 
 ##
+# Create a symbolic link to a file.
+# Overwrites the file if it already exists.
+#
+# Param {String} - the file to link to
+# Param {String} - the destination of the link
+softLink(){
+    local src=$1
+    local dest=$2
+    ln -sf $src $dest
+    if [ "$?" -eq "0" ]; then
+        printInfo "Link created from $src to $dest"
+    else
+        printError "Failed to create link from $src to $dest"
+    fi
+}
+
+##
 # Deletes a file failing silently.
 #
 # Param {String} - the file to delete
@@ -61,6 +78,12 @@ deleteSilently(){
   rm $file 2> /dev/null
 }
 
+##
+# Downloads and unzips to a directory
+#
+# Param {String} - the download url
+# Param {String} - the destination directory
+# Returns {Boolean} - if the download was successful
 downloadAndUnzip(){
   local url=$1
   local dest=$2
@@ -114,7 +137,7 @@ createDirectory(){
 addRepository(){
   local repo=$1
   if ! grep -q "$repo" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
-    add-apt-repository --yes ppa:$repo
+    add-apt-repository --yes ppa:$repo > /dev/null 2>&1
     if [ "$?" -eq "0" ]; then
         printInfo "Repository $repo added"
     else
@@ -134,7 +157,7 @@ installPackage() {
   local packageName=$1
   if [ $(dpkg-query -W -f='${Status}' $packageName 2>/dev/null | grep -c "ok installed") -eq 0 ];
   then
-    apt-get -qq install $packageName;
+    apt-get -y install $packageName > /dev/null 2>&1
     if [ "$?" -eq "0" ]; then
         printInfo "Package $packageName installed successfully"
     else

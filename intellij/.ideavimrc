@@ -25,10 +25,8 @@ noremap <c-space> ?
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
-
 vnoremap : ;
 noremap <C-a> ggVG
-vnoremap // y/<C-R>"<CR>jjjlk;j
 
 " ---------- SPECIAL MAPPINGS ----------
 noremap <leader><leader>v viw"0p

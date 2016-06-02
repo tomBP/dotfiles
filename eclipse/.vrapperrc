@@ -5,7 +5,6 @@ set autoindent
 set number
 
 " MAPS
-noremap 0 ^
 noremap H ^
 noremap L $
 nnoremap G Gzz
@@ -13,12 +12,13 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
+noremap j gj
+noremap k gk
 noremap <space> /
 noremap <c-space> ?
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
-vnoremap : ;
 nnoremap JK ji
 nnoremap JL ki
 
