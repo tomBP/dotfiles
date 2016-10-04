@@ -46,6 +46,7 @@ addRepository "numix/ppa"
 
 # Install common programs
 printHeader "INSTALLING PACKAGES"
+installPackage "mutt"
 installPackage "curl"
 installPackage "unzip"
 installPackage "wget"
