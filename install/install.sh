@@ -61,6 +61,8 @@ installPackage "oracle-java8-installer"
 installPackage "openjdk-8-jdk"
 installPackage "numix-gtk-theme numix-icon-theme-circle"
 installPackage "unity-tweak-tool"
+installPackage "ack-grep"
+installPackage "exuberant-ctags"
 
 # Install opt programs
 printHeader "INSTALLING SOFTWARE TO OPT"
