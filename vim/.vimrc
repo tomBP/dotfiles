@@ -80,6 +80,11 @@ let g:NERDTreeChDirMode = 2
 " Syntastic 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_javascript_checkers = ['standard']
+
+" Standard
+autocmd bufwritepost *.js silent !standard --fix %
+set autoread
 
 " Tags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
