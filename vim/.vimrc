@@ -29,6 +29,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Baseline
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -64,6 +66,9 @@ endif
 " ========================================================================
 " Plugin Config
 " ========================================================================
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<leader>s"
 
 " Powerline
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
