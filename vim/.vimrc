@@ -47,8 +47,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " ========================================================================
-" Plugin Config
+" Global Config
 " ========================================================================
+"
+" LEADER
+let mapleader = ","
+let g:mapleader = ","
 
 " Colours
 if has("gui_running")
@@ -56,6 +60,10 @@ if has("gui_running")
 else
    colorscheme jellybeans
 endif
+
+" ========================================================================
+" Plugin Config
+" ========================================================================
 
 " Powerline
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
@@ -84,7 +92,6 @@ let g:syntastic_javascript_checkers = ['standard']
 
 " Standard
 autocmd bufwritepost *.js silent !standard --fix %
-set autoread
 
 " Tags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
@@ -92,8 +99,25 @@ let g:easytags_async = 1
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
+" AIRLINE
+if !exists('g:airlinesymbols') 
+   let g:airlinesymbols = {} 
+endif 
+let g:airlineleftsep = '»' 
+let g:airlineleftsep = '?' 
+let g:airlinerightsep = '«' 
+let g:airlinerightsep = '?' 
+let g:airlinesymbols.linenr = '?' 
+let g:airlinesymbols.linenr = '?' 
+let g:airlinesymbols.linenr = '¶' 
+let g:airlinesymbols.branch = '?' 
+let g:airlinesymbols.paste = '?'
+let g:airlinesymbols.paste = 'Þ' 
+let g:airlinesymbols.paste = '?' 
+let g:airlinesymbols.whitespace = '?'
+
 " ========================================================================
-" Load Configuration 
+" Load Additional Config 
 " ========================================================================
 
 source ~/.vim/startup/commands.vim

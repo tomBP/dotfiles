@@ -1,17 +1,12 @@
-" LEADER
-let mapleader = ","
-let g:mapleader = ","
-
 " FILE OPERATIONS
 noremap <leader>w :w!<cr>
 noremap <leader>cc :q!<cr>
 noremap <leader>ca :qall!<cr>
 command W w !sudo tee % > /dev/null
 noremap <leader>ev :e $MYVIMRC<cr>
-" Doesn't work with Vundle nnoremap <leader>sv :source $MYVIMRC<cr>
 noremap <leader>evc :e ~/.vim/startup/commands.vim<cr>
 noremap <leader>evs :e ~/.vim/startup/settings.vim<cr>
-" Doesn't work either nnoremap <leader>svc :source ~/.vim/startup/commands.vim<cr>!
+noremap <leader>eva :e ~/.vim/startup/abbreviations.vim<cr>
 
 " SEARCH
 nnoremap <silent> <leader>cs :nohlsearch<Bar>:echo<CR>
@@ -45,7 +40,6 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 noremap <C-a> ggVG
-vnoremap // y/<C-R>"<CR>
 
 " SESSIONS
 noremap <leader>os :OpenSession<cr>
@@ -62,26 +56,10 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 " MOVE A LINE OF TEXT USING ALT+[JK] 
-nnoremap <M-j> mz:m+<cr>`z
-nnoremap <M-k> mz:m-2<cr>`z
-vnoremap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vnoremap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-
-" AIRLINE
-if !exists('g:airlinesymbols') 
-   let g:airlinesymbols = {} 
-endif 
-let g:airlineleftsep = '»' 
-let g:airlineleftsep = '?' 
-let g:airlinerightsep = '«' 
-let g:airlinerightsep = '?' 
-let g:airlinesymbols.linenr = '?' 
-let g:airlinesymbols.linenr = '?' 
-let g:airlinesymbols.linenr = '¶' 
-let g:airlinesymbols.branch = '?' 
-let g:airlinesymbols.paste = '?'
-let g:airlinesymbols.paste = 'Þ' 
-let g:airlinesymbols.paste = '?' 
-let g:airlinesymbols.whitespace = '?'
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
