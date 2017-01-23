@@ -22,6 +22,14 @@ export EDITOR='vim'
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
+# Load functions
+COMMANDS_DIR="$HOME/.zsh/functions"
+if [ -f $ALIASES_DIR ]; then
+  source $ALIASES_DIR
+else
+  print "$ALIASES_DIR not found."
+fi
+
 # Load aliases
 ALIASES_DIR="$HOME/.zsh/aliases"
 if [ -f $ALIASES_DIR ]; then

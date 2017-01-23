@@ -22,20 +22,19 @@ apt-get update
 
 # Constants
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PARENT=$(dirname $DIR)
+PARENT=$(dirname "$DIR")
 WORK_DIR=$HOME/work
 GIT_DIR=$WORK_DIR/git
 SVN_DIR=$WORK_DIR/svn
 INTELLIJ_DIR=$WORK_DIR/intellij
-OPT_DIR=/opt
 APP_DIR=/usr/share/applications
 
 # Create directory structure
 printHeader "CREATING DIRECTORIES"
-createDirectory $WORK_DIR
-createDirectory $GIT_DIR
-createDirectory $SVN_DIR
-createDirectory $INTELLIJ_DIR
+createDirectory "$WORK_DIR"
+createDirectory "$GIT_DIR"
+createDirectory "$SVN_DIR"
+createDirectory "$INTELLIJ_DIR"
 
 # Add Repositories
 printHeader "ADDING REPOSITORIES"
@@ -129,8 +128,6 @@ softLink "$PARENT"/vim/.vimrc "$HOME"
 softLink "$PARENT"/vim/.vim "$HOME"
 softLink "$PARENT"/terminal/.zsh "$HOME"
 softLink "$PARENT"/terminal/.gitconfig "$HOME"
-softLink "$PARENT"/terminal/.profile "$HOME"
-softLink "$PARENT"/terminal/.tmux.conf "$HOME"
 softLink "$PARENT"/terminal/.zshrc "$HOME"
 softLink "$PARENT"/intellij/.ideavimrc "$HOME"
 softLink "$PARENT"/intellij/settings.jar "$INTELLIJ_DIR"
