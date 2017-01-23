@@ -4,7 +4,6 @@ alias g='cd ~/work/git'
 alias s='cd ~/work/svn'
 alias ij='cd ~/work/intellij'
 alias op='cd /opt'
-alias wiki='cd ~/work/git/wiki'
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
@@ -34,3 +33,4 @@ alias sapu='sudo apt-get update'
 alias j8='export JAVA_HOME="/usr/lib/jvm/java-8-oracle"'
 alias j7='export JAVA_HOME="/usr/lib/jvm/java-7-oracle"'
 alias j6='export JAVA_HOME="/usr/lib/jvm/java-6-oracle"'
+

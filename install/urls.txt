@@ -1,5 +1,0 @@
-gradle 2.13 https://services.gradle.org/distributions/gradle-2.13-bin.zip
-maven 3.3.9 http://ftp.cixug.es/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
-grails 3.1.7 https://github.com/grails/grails-core/releases/download/v3.1.7/grails-3.1.7.zip
-ant 1.9.7 http://apache.rediris.es//ant/binaries/apache-ant-1.9.7-bin.zip
-groovy 2.4.6 https://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.6.zip

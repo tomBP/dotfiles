@@ -1,0 +1,5 @@
+# Mkdir and then cd
+function mkdircd () { 
+  mkdir -p "$@" && eval cd "\"\$$#\""; 
+}
+

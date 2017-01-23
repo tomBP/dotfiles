@@ -34,8 +34,12 @@ Plugin 'honza/vim-snippets'
 " Baseline
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
-" Linters
+" Linting
 Plugin 'scrooloose/syntastic'
+" Formatting
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 " Saving
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -46,6 +50,7 @@ Plugin 'jewes/Conque-Shell'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+call glaive#Install()        " required
 filetype plugin indent on    " required
 
 " ========================================================================
@@ -58,7 +63,7 @@ let g:mapleader = ","
 
 " Colours
 if has("gui_running")
-   colorscheme jellybeans
+   colorscheme eclipse
 else
    colorscheme jellybeans
 endif
@@ -97,6 +102,12 @@ let g:syntastic_javascript_checkers = ['standard']
 
 " Standard
 autocmd bufwritepost *.js silent !standard --fix %
+
+" Formatters
+augroup autoformat_settings
+  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+augroup END
 
 " Tags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']

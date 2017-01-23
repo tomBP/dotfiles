@@ -54,6 +54,7 @@ installPackage "zsh"
 installPackage "vim"
 installPackage "git"
 installPackage "tmux"
+installPackage "screen"
 installPackage "guake"
 installPackage "telegram"
 installPackage "htop"
@@ -63,21 +64,13 @@ installPackage "numix-gtk-theme numix-icon-theme-circle"
 installPackage "unity-tweak-tool"
 installPackage "ack-grep"
 installPackage "exuberant-ctags"
-
-# Install opt programs
-printHeader "INSTALLING SOFTWARE TO OPT"
-while IFS=" " read name version url; do
-    if directoryExists $OPT_DIR/$name-$version; then
-       printInfo "$name $version already installed"
-    else
-       printInfo "Downloading $name $version..."
-       if downloadAndUnzip $url $OPT_DIR; then
-           printInfo "Successfully downloaded $name $version"
-       else
-           printError "Failed to download $name $version"
-       fi
-    fi
-done < urls.txt
+installPackage "clang-format"
+installPackage "build-essential"
+installPackage "cmake"
+installPackage "python-dev"
+installPackage "python3-dev"
+installPackage "ca-certificates"
+installPackage "zip"
 
 # Install desktop files
 printHeader "INSTALLING DESKTOP FILES"
@@ -104,39 +97,46 @@ fi
 printHeader "INSTALLING NVM AND NODE"
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
 source ~/.nvm/nvm.sh
-nvm install 4.4.0
-nvm use 4.4.0
-npm install -g bower grunt gulp karma jasmine
+nvm install 7.4.0
+nvm use 7.4.0
+npm install -g bower grunt gulp karma jasmine js-beautify
 
 # Install Ruby
 printHeader "INSTALLING RUBY"
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | sudo -u $SUDO_USER bash -s -- --ignore-dotfiles
+curl -sSL https://get.rvm.io | sudo -u "$SUDO_USER" bash -s -- --ignore-dotfiles
 source ~/.rvm/scripts/rvm
 rvm install ruby-2.3.1
 rvm use ruby-2.3.1
 gem install bundler
+
+# Install SDKMAN
+printHeader "INSTALLING SDK MAN"
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install grails 2.5.4
+sdk install groovy
+sdk install maven
+sdk install ant
+sdk install gradle
 
 # Oh my zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 # Config
 printHeader "INSTALLING CONFIGURATION"
-softLink $PARENT/vim/.vimrc $HOME
-softLink $PARENT/vim/.vim $HOME
-softLink $PARENT/terminal/.zsh $HOME
-softLink $PARENT/terminal/.gitconfig $HOME
-softLink $PARENT/terminal/.profile $HOME
-softLink $PARENT/terminal/.tmux.conf $HOME
-softLink $PARENT/terminal/.zshrc $HOME
-softLink $PARENT/intellij/.ideavimrc $HOME
-softLink $PARENT/intellij/settings.jar $INTELLIJ_DIR
-softLink $PARENT/intellij/fidea.sh $INTELLIJ_DIR
-softLink $PARENT/intellij/GoogleStyle.xml $INTELLIJ_DIR
-
-# Personal wiki
-git clone https://github.com/tomBP/tomBP.github.io $GIT_DIR/wiki
-(cd $GIT_DIR/wiki; chown $USER *; sudo -u $SUDO_USER bundle install)
+softLink "$PARENT"/vim/.vimrc "$HOME"
+softLink "$PARENT"/vim/.vim "$HOME"
+softLink "$PARENT"/terminal/.zsh "$HOME"
+softLink "$PARENT"/terminal/.gitconfig "$HOME"
+softLink "$PARENT"/terminal/.profile "$HOME"
+softLink "$PARENT"/terminal/.tmux.conf "$HOME"
+softLink "$PARENT"/terminal/.zshrc "$HOME"
+softLink "$PARENT"/intellij/.ideavimrc "$HOME"
+softLink "$PARENT"/intellij/settings.jar "$INTELLIJ_DIR"
+softLink "$PARENT"/intellij/fidea.sh "$INTELLIJ_DIR"
+softLink "$PARENT"/intellij/GoogleStyle.xml "$INTELLIJ_DIR"
 
 # Finish successfully
 exit
+

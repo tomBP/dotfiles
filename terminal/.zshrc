@@ -4,9 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Theme 
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # Plugins 
 plugins=(vundle)
 
@@ -14,16 +11,8 @@ plugins=(vundle)
 OPT="/opt"
 USR="/usr"
 
-export GRADLE_HOME="$OPT/gradle-2.11"
-export ANDROID_HOME="$HOME/android-sdk-linux"
-export ANT_HOME="$OPT/ant-1.9.6"
-export IVY_HOME="$OPT/ant-1.9.6"
-export GRAILS_HOME="$OPT/grails-2.5.4"
 export JAVA_HOME="$USR/lib/jvm/java-8-oracle"
-export MAVEN_HOME="$OPT/maven-3.3.9"
-export GROOVY_HOME="$OPT/groovy-2.4.6"
-export GOPATH="$HOME/Work/Go"
-export PATH="$PATH:$MAVEN_HOME/bin:$GRADLE_HOME/bin:$USR/local/go/bin:$GRAILS_HOME/bin:$ANT_HOME/bin:$GROOVY_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export PATH="$PATH"
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -52,3 +41,8 @@ export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 rvm use ruby-2.3.1
+
+# Load SDKMAN
+export SDKMAN_DIR="/home/tbp/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
