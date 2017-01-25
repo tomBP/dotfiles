@@ -4,8 +4,6 @@
 Clone the git repo and run the install script:
 
 ```bash
-mkdir $HOME/work/git
-cd $HOME/work/git
 git clone https://github.com/tomBP/dotfiles.git
 cd dotfiles/install
 sudo ./install.sh
