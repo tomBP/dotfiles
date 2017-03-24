@@ -77,7 +77,7 @@ source ~/.nvm/nvm.sh
 nvm install 7.4.0
 nvm use 7.4.0
 npm install -g bower grunt gulp karma jasmine js-beautify
-chmod -R tbp:tbp ~/.nvm
+chown -R tbp:tbp ~/.nvm
 
 # Install Ruby
 printHeader "INSTALLING RUBY"
@@ -87,7 +87,7 @@ source ~/.rvm/scripts/rvm
 rvm install ruby-2.3.1
 rvm use ruby-2.3.1
 gem install bundler
-chmod -R tbp:tbp ~/.rvm
+chown -R tbp:tbp ~/.rvm
 
 # Install SDKMAN
 printHeader "INSTALLING SDK MAN"
@@ -98,7 +98,7 @@ sdk install groovy
 sdk install maven
 sdk install ant
 sdk install gradle
-chmod -R tbp:tbp ~/.sdk
+chown -R tbp:tbp ~/.sdk
 
 # Oh my zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
