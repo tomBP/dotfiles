@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Plugins 
-plugins=(vundle)
+plugins=(vundle git)
 
 # Env variables
 OPT="/opt"
