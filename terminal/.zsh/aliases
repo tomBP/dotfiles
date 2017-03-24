@@ -1,5 +1,6 @@
 # cd aliases
 alias t='cd ~'
+alias b='cd ~/work/git/bkool-dev-env'
 alias g='cd ~/work/git'
 alias s='cd ~/work/svn'
 alias ij='cd ~/work/intellij'
@@ -30,7 +31,4 @@ alias szsh='source ~/.zshrc'
 alias sap='sudo apt-get'
 alias sapi='sudo apt-get install'
 alias sapu='sudo apt-get update'
-alias j8='export JAVA_HOME="/usr/lib/jvm/java-8-oracle"'
-alias j7='export JAVA_HOME="/usr/lib/jvm/java-7-oracle"'
-alias j6='export JAVA_HOME="/usr/lib/jvm/java-6-oracle"'
 

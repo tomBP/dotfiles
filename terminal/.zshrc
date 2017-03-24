@@ -11,7 +11,7 @@ plugins=(vundle)
 OPT="/opt"
 USR="/usr"
 
-export JAVA_HOME="$USR/lib/jvm/java-8-oracle"
+export JAVA_HOME="$USR/lib/jvm/java-8-openjdk-amd64"
 export PATH="$PATH"
 
 # Load oh-my-zsh
@@ -23,11 +23,11 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 
 # Load functions
-COMMANDS_DIR="$HOME/.zsh/functions"
-if [ -f $ALIASES_DIR ]; then
-  source $ALIASES_DIR
+FUNCTIONS_DIR="$HOME/.zsh/functions"
+if [ -f $FUNCTIONS_DIR ]; then
+  source $FUNCTIONS_DIR
 else
-  print "$ALIASES_DIR not found."
+  print "$FUNCTIONS_DIR not found."
 fi
 
 # Load aliases
@@ -42,15 +42,11 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
  
-nvm use 4.4.0
-
 # Load ruby
 export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-rvm use ruby-2.3.1
 
-# Load SDKMAN
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/tbp/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+[[ -s "/home/tbp/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tbp/.sdkman/bin/sdkman-init.sh"

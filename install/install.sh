@@ -7,7 +7,7 @@
 source utils.sh
 
 # Copy all output to a log
-exec > >(tee -i install-log.txt)
+exec > >(tee -i install.log)
 exec 2>&1
 
 # Privilege check
@@ -33,8 +33,8 @@ APP_DIR=/usr/share/applications
 printHeader "CREATING DIRECTORIES"
 createDirectory "$WORK_DIR"
 createDirectory "$GIT_DIR"
-createDirectory "$SVN_DIR"
 createDirectory "$INTELLIJ_DIR"
+createDirectory "$SVN_DIR"
 
 # Add Repositories
 printHeader "ADDING REPOSITORIES"
@@ -45,7 +45,6 @@ addRepository "numix/ppa"
 
 # Install common programs
 printHeader "INSTALLING PACKAGES"
-installPackage "mutt"
 installPackage "curl"
 installPackage "unzip"
 installPackage "wget"
@@ -57,8 +56,6 @@ installPackage "screen"
 installPackage "guake"
 installPackage "telegram"
 installPackage "htop"
-installPackage "oracle-java8-installer"
-installPackage "openjdk-8-jdk"
 installPackage "numix-gtk-theme numix-icon-theme-circle"
 installPackage "unity-tweak-tool"
 installPackage "ack-grep"
@@ -70,27 +67,8 @@ installPackage "python-dev"
 installPackage "python3-dev"
 installPackage "ca-certificates"
 installPackage "zip"
-
-# Install desktop files
-printHeader "INSTALLING DESKTOP FILES"
-cat > $APP_DIR/intellij.desktop << EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=IntelliJ IDEA
-Icon=/opt/intellij-15/bin/idea.png
-Exec="/opt/intellij-15/bin/fidea.sh" %f
-Comment=Develop with pleasure!
-Categories=Development;IDE;
-Terminal=false
-StartupWMClass=jetbrains-idea
-EOF
-
-if [ "$?" -eq "0" ]; then
-    printInfo "Intellij desktop entry added"
-else
-    printError "Failed to add Intellij desktop entry"
-fi
+installPackage "gparted"
+installPackage "hardinfo"
 
 # Install nvm
 printHeader "INSTALLING NVM AND NODE"
@@ -99,6 +77,7 @@ source ~/.nvm/nvm.sh
 nvm install 7.4.0
 nvm use 7.4.0
 npm install -g bower grunt gulp karma jasmine js-beautify
+chmod -R tbp:tbp ~/.nvm
 
 # Install Ruby
 printHeader "INSTALLING RUBY"
@@ -108,6 +87,7 @@ source ~/.rvm/scripts/rvm
 rvm install ruby-2.3.1
 rvm use ruby-2.3.1
 gem install bundler
+chmod -R tbp:tbp ~/.rvm
 
 # Install SDKMAN
 printHeader "INSTALLING SDK MAN"
@@ -118,6 +98,7 @@ sdk install groovy
 sdk install maven
 sdk install ant
 sdk install gradle
+chmod -R tbp:tbp ~/.sdk
 
 # Oh my zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -132,7 +113,7 @@ softLink "$PARENT"/terminal/.zshrc "$HOME"
 softLink "$PARENT"/intellij/.ideavimrc "$HOME"
 softLink "$PARENT"/intellij/settings.jar "$INTELLIJ_DIR"
 softLink "$PARENT"/intellij/fidea.sh "$INTELLIJ_DIR"
-softLink "$PARENT"/intellij/GoogleStyle.xml "$INTELLIJ_DIR"
+softLink "$PARENT"/intellij/BkoolStyle.xml "$INTELLIJ_DIR"
 
 # Finish successfully
 exit
