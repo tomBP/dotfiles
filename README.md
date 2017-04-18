@@ -44,7 +44,7 @@ Then, download IntelliJ to /opt, copy the fidea.sh file to the bin directory.
 ```
 sudo cp $HOME/work/intellij/fidea.sh /opt/intellij-15/bin/fidea.sh
 ```
-Once IntelliJ is started import the settings.jar and BkoolStyle.xml files. 
+Once IntelliJ is started import the settings.jar and Style.xml files. 
 
 ## Swap Caps and Escape
 
