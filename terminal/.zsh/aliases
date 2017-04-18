@@ -1,6 +1,5 @@
 # cd aliases
 alias t='cd ~'
-alias b='cd ~/work/git/bkool-dev-env'
 alias g='cd ~/work/git'
 alias s='cd ~/work/svn'
 alias ij='cd ~/work/intellij'
