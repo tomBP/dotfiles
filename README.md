@@ -16,17 +16,15 @@ Change to zsh by running the command below, then log out and in again.
 chsh -s $(which zsh)
 ```
 
-Install vim plugins and then setup YouCompleteMe:
+Install vim plugins 
 
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 :q
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer
 ```
 
-Change to Numix theme and icons using the Unity Tweak Tool 
+## Linux font fixes if required
 
 First, follow these instructions to improve Linux fonts in Java Swing applications:
 
@@ -46,9 +44,3 @@ sudo cp $HOME/work/intellij/fidea.sh /opt/intellij-15/bin/fidea.sh
 ```
 Once IntelliJ is started import the settings.jar and Style.xml files. 
 
-## Swap Caps and Escape
-
-```
-sudo vim /etc/default/keyboard
-XKBOPTIONS=”caps:swapescape”
-```

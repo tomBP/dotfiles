@@ -28,7 +28,7 @@ set number
 set magic
 set encoding=utf8
 set ffs=unix,dos,mac
-set textwidth=100
+set textwidth=120
 set colorcolumn=+1
 syntax enable
 

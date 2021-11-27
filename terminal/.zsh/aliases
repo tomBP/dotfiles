@@ -1,33 +1,16 @@
 # cd aliases
-alias t='cd ~'
 alias g='cd ~/work/git'
-alias s='cd ~/work/svn'
-alias ij='cd ~/work/intellij'
 alias op='cd /opt'
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.." 
 
-# programs
-alias mys='mysql -u root -p'
-
 # history aliases
 alias h1='history 10'
 alias h2='history 20'
 alias h3='history 30'
 
-# edit file aliases
-alias ehosts='sudo vim /etc/hosts'
-alias ezsh='sudo vim ~/.zshrc' 
-alias eij='sudo vim ~/.ideavimrc'
-alias evim='sudo vim ~/.vimrc'
-
 # source file aliases
 alias szsh='source ~/.zshrc' 
-
-# command aliases
-alias sap='sudo apt-get'
-alias sapi='sudo apt-get install'
-alias sapu='sudo apt-get update'
 

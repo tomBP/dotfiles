@@ -11,7 +11,6 @@ plugins=(vundle git)
 OPT="/opt"
 USR="/usr"
 
-export JAVA_HOME="$USR/lib/jvm/java-8-openjdk-amd64"
 export PATH="$PATH"
 
 # Load oh-my-zsh
@@ -37,15 +36,6 @@ if [ -f $ALIASES_DIR ]; then
 else
   print "$ALIASES_DIR not found."
 fi
-
-# Load node
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
- 
-# Load ruby
-export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/tbp/.sdkman"
